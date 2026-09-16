@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Award, Lock, Mail, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import { SEOHead } from "../components/SEOHead";
 
 export const LoginPage: React.FC = () => {
   const { login } = useAuth();
@@ -34,6 +35,12 @@ export const LoginPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#000000] text-white flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
+      <SEOHead
+        title="Sign In"
+        description="Sign in to your Ansoyal AI Recruiter workspace to discover verified candidates, code assessment evidence, and credibility insights."
+        noindex={false}
+        canonicalPath="/login"
+      />
       {/* Cyber Ambient Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />

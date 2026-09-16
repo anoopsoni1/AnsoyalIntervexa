@@ -1,12 +1,14 @@
 import React from "react";
 import { User, Shield, Key, Bell, ShieldCheck } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import { SEOHead } from "../components/SEOHead";
 
 export const SettingsPage: React.FC = () => {
   const { user, company } = useAuth();
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-300">
+      <SEOHead title="Recruiter Settings" noindex={true} canonicalPath="/settings" />
       <div>
         <div className="flex items-center gap-2 mb-1">
           <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/20">

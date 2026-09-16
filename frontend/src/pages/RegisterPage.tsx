@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Award, Building2, Lock, Mail, User, ArrowRight, Briefcase } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import { SEOHead } from "../components/SEOHead";
 
 export const RegisterPage: React.FC = () => {
   const { register } = useAuth();
@@ -38,6 +39,12 @@ export const RegisterPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#000000] text-white flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
+      <SEOHead
+        title="Create Recruiter Account"
+        description="Register your verified company account on Ansoyal AI Recruiter to access evidence-backed talent pools, code assessments, and candidate credibility scores."
+        noindex={false}
+        canonicalPath="/register"
+      />
       {/* Ambient Glows */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 

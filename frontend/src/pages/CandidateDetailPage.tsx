@@ -47,6 +47,7 @@ import { VerificationBadge } from "../components/VerificationBadge";
 import { ContactModal } from "../components/ContactModal";
 import { ShortlistModal } from "../components/ShortlistModal";
 import { RecruiterCandidateDTO, RecruiterNoteDTO } from "../types";
+import { SEOHead } from "../components/SEOHead";
 
 export const CandidateDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -192,6 +193,11 @@ export const CandidateDetailPage: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-300 relative">
+      <SEOHead
+        title={candidate ? `${candidate.name} — Candidate Evidence Profile` : "Candidate Evidence Profile"}
+        noindex={true}
+        canonicalPath={`/candidates/${id}`}
+      />
       {/* Back Link */}
       <div>
         <Link

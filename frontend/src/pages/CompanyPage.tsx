@@ -4,6 +4,7 @@ import { Building2, Users, ShieldCheck, Globe, MapPin, Briefcase, CheckCircle2 }
 import { api } from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { CompanyDTO, RecruiterUserDTO } from "../types";
+import { SEOHead } from "../components/SEOHead";
 
 export const CompanyPage: React.FC = () => {
   const { user } = useAuth();
@@ -33,6 +34,7 @@ export const CompanyPage: React.FC = () => {
 
   return (
     <div className="max-w-5xl mx-auto space-y-8 animate-in fade-in duration-300">
+      <SEOHead title="Company & Team Workspace" noindex={true} canonicalPath="/company" />
       <div>
         <div className="flex items-center gap-2 mb-1">
           <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/20">

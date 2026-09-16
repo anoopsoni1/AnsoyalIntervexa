@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Allow: /login
+Allow: /register
+
+# Private Recruiter & Candidate Workspace Routes - DO NOT INDEX
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /candidates
+Disallow: /candidates/
+Disallow: /shortlists
+Disallow: /jobs
+Disallow: /jobs/
+Disallow: /company
+Disallow: /analytics
+Disallow: /settings
+Disallow: /admin
+
+Sitemap: https://ansoyal.co-vid.in/sitemap.xml

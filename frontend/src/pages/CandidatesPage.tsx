@@ -16,6 +16,7 @@ import { FilterSidebar } from "../components/FilterSidebar";
 import { ShortlistModal } from "../components/ShortlistModal";
 import { CandidateCardSkeleton } from "../components/SkeletonLoader";
 import { RecruiterCandidateDTO, VerificationLevel } from "../types";
+import { SEOHead } from "../components/SEOHead";
 
 export const CandidatesPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -92,6 +93,7 @@ export const CandidatesPage: React.FC = () => {
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto animate-in fade-in duration-300">
+      <SEOHead title="Discover Verified Talent" noindex={true} canonicalPath="/candidates" />
       {/* Page Heading */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

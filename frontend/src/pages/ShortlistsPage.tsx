@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { api } from "../services/api";
 import { ShortlistDTO, ShortlistStatus } from "../types";
+import { SEOHead } from "../components/SEOHead";
 
 const STAGES: { label: string; status: ShortlistStatus; color: string }[] = [
   { label: "Shortlisted", status: "SHORTLISTED", color: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20" },
@@ -61,6 +62,7 @@ export const ShortlistsPage: React.FC = () => {
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto animate-in fade-in duration-300">
+      <SEOHead title="Shortlisted Talent Pipeline" noindex={true} canonicalPath="/shortlists" />
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

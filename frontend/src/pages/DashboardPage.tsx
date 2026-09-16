@@ -19,6 +19,7 @@ import { CandidateCard } from "../components/CandidateCard";
 import { ShortlistModal } from "../components/ShortlistModal";
 import { CandidateCardSkeleton } from "../components/SkeletonLoader";
 import { DashboardMetricsDTO, RecruiterCandidateDTO } from "../types";
+import { SEOHead } from "../components/SEOHead";
 
 export const DashboardPage: React.FC = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ export const DashboardPage: React.FC = () => {
 
   return (
     <div className="space-y-10 max-w-7xl mx-auto animate-in fade-in duration-300">
+      <SEOHead title="Talent Intelligence Dashboard" noindex={true} canonicalPath="/dashboard" />
       {/* PAGE HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

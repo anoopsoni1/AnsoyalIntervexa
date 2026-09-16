@@ -10,6 +10,7 @@ import {
   Layers,
   Save,
 } from "lucide-react";
+import { SEOHead } from "../components/SEOHead";
 
 export const JobCreatePage: React.FC = () => {
   const navigate = useNavigate();
@@ -63,6 +64,7 @@ export const JobCreatePage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6 animate-in fade-in duration-300">
+      <SEOHead title="Post New Position" noindex={true} canonicalPath="/jobs/new" />
       {/* Back Button */}
       <button
         onClick={() => navigate("/jobs")}

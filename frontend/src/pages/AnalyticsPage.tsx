@@ -26,6 +26,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import { SEOHead } from "../components/SEOHead";
 
 const FUNNEL_DATA = [
   { stage: "Profiles Viewed", count: 142, fill: "#06b6d4" },
@@ -63,6 +64,7 @@ const VERIFICATION_PIE = [
 export const AnalyticsPage: React.FC = () => {
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
+      <SEOHead title="Recruiter Pipeline Analytics" noindex={true} canonicalPath="/analytics" />
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

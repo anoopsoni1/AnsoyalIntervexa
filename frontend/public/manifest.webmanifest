@@ -1,0 +1,16 @@
+{
+  "name": "Ansoyal AI Recruiter Platform",
+  "short_name": "Ansoyal Recruiter",
+  "description": "Evidence-based talent discovery and verified candidate recruitment platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#06b6d4",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

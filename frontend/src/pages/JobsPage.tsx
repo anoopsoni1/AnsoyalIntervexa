@@ -13,6 +13,7 @@ import {
   DollarSign,
   Layers,
 } from "lucide-react";
+import { SEOHead } from "../components/SEOHead";
 
 interface JobPosting {
   id: string;
@@ -97,6 +98,7 @@ export const JobsPage: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
+      <SEOHead title="Active Job Openings" noindex={true} canonicalPath="/jobs" />
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
