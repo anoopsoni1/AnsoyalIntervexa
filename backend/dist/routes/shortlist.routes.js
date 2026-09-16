@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const shortlist_controller_js_1 = require("../controllers/shortlist.controller.js");
+const auth_middleware_js_1 = require("../middleware/auth.middleware.js");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_js_1.authenticateRecruiter);
+router.get("/", shortlist_controller_js_1.getShortlists);
+router.post("/", shortlist_controller_js_1.addToShortlist);
+router.patch("/:id", shortlist_controller_js_1.updateShortlistStatus);
+router.delete("/:id", shortlist_controller_js_1.removeFromShortlist);
+exports.default = router;

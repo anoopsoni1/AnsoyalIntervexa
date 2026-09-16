@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const candidate_controller_js_1 = require("../controllers/candidate.controller.js");
+const auth_middleware_js_1 = require("../middleware/auth.middleware.js");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_js_1.authenticateRecruiter);
+router.get("/", candidate_controller_js_1.getCandidates);
+router.get("/:id", candidate_controller_js_1.getCandidateById);
+router.get("/:id/evidence", candidate_controller_js_1.getCandidateEvidence);
+router.get("/:id/credibility", candidate_controller_js_1.getCandidateCredibility);
+router.get("/:id/projects", candidate_controller_js_1.getCandidateProjects);
+router.get("/:id/github", candidate_controller_js_1.getCandidateGitHub);
+router.post("/:id/contact", candidate_controller_js_1.contactCandidate);
+exports.default = router;

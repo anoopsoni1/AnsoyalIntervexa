@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const company_controller_js_1 = require("../controllers/company.controller.js");
+const auth_middleware_js_1 = require("../middleware/auth.middleware.js");
+const role_middleware_js_1 = require("../middleware/role.middleware.js");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_js_1.authenticateRecruiter);
+router.get("/profile", company_controller_js_1.getCompanyProfile);
+router.patch("/profile", (0, role_middleware_js_1.requireRole)(["OWNER", "ADMIN"]), company_controller_js_1.updateCompanyProfile);
+router.get("/members", company_controller_js_1.getTeamMembers);
+router.patch("/members/:memberId/role", (0, role_middleware_js_1.requireRole)(["OWNER", "ADMIN"]), company_controller_js_1.updateMemberRole);
+exports.default = router;
