@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5002/api";
+  "https://ansoyalintervexa-1.onrender.com/api"
 
 export class ApiClient {
   private getToken(): string | null {
