@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  recruiter-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ansoyal-recruiter-backend
+    restart: always
+    ports:
+      - "5002:5002"
+    environment:
+      - PORT=5002
+      - NODE_ENV=production
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - ANSOYAL_STUDENT_API_URL=${ANSOYAL_STUDENT_API_URL}
+      - ANSOYAL_STUDENT_SERVICE_KEY=${ANSOYAL_STUDENT_SERVICE_KEY}
+      - FRONTEND_URL=http://localhost:5174
+
+  recruiter-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ansoyal-recruiter-frontend
+    restart: always
+    ports:
+      - "5174:80"
+    depends_on:
+      - recruiter-backend

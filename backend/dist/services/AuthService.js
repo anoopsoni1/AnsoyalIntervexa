@@ -17,7 +17,8 @@ class AuthService {
             companyId: recruiter.companyId.toString(),
             role: recruiter.role,
         };
-        return jsonwebtoken_1.default.sign(payload, env_js_1.ENV.ACCESS_TOKEN_SECRET, {
+        const secret = env_js_1.ENV.ACCESS_TOKEN_SECRET || env_js_1.ENV.JWT_SECRET || "vewb37OPcFl2gZrc1zCacjCqsKajDyHfozOG4MOhfAbuUWvj1VE6UbEe";
+        return jsonwebtoken_1.default.sign(payload, secret, {
             expiresIn: env_js_1.ENV.ACCESS_TOKEN_EXPIRY,
         });
     }
@@ -28,7 +29,8 @@ class AuthService {
             companyId: recruiter.companyId.toString(),
             role: recruiter.role,
         };
-        return jsonwebtoken_1.default.sign(payload, env_js_1.ENV.REFRESH_TOKEN_SECRET, {
+        const refreshSecret = env_js_1.ENV.REFRESH_TOKEN_SECRET || "K4JvZ9Y8mIYB55L5Y5Uw0BT0ltYYJaRa3mtBoTqhXHjAMl28grA4kuOx31s";
+        return jsonwebtoken_1.default.sign(payload, refreshSecret, {
             expiresIn: env_js_1.ENV.REFRESH_TOKEN_EXPIRY,
         });
     }
@@ -148,7 +150,8 @@ class AuthService {
         }
         let decoded;
         try {
-            decoded = jsonwebtoken_1.default.verify(providedRefreshToken, env_js_1.ENV.REFRESH_TOKEN_SECRET);
+            const refreshSecret = env_js_1.ENV.REFRESH_TOKEN_SECRET || "K4JvZ9Y8mIYB55L5Y5Uw0BT0ltYYJaRa3mtBoTqhXHjAMl28grA4kuOx31s";
+            decoded = jsonwebtoken_1.default.verify(providedRefreshToken, refreshSecret);
         }
         catch (e) {
             const err = new Error("Invalid or expired refresh token");

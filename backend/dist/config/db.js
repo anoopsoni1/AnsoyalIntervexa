@@ -12,7 +12,7 @@ const Company_model_js_1 = require("../models/Company.model.js");
 const Recruiter_model_js_1 = require("../models/Recruiter.model.js");
 async function connectRecruiterDB() {
     try {
-        let uri = env_js_1.ENV.MONGODB_URI.trim();
+        let uri = (env_js_1.ENV.MONGODB_URI || "").trim();
         if (uri.endsWith(".mongodb.net")) {
             uri += "/ANSOYAL_RECRUITER_DB?retryWrites=true&w=majority";
         }
